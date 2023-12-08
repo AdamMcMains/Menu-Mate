@@ -1,3 +1,7 @@
+let text = document.querySelector('#Location_result p');
+let locationBox = document.querySelector('.Location');
+let detectBtn = document.querySelector('#find_retaurants_btn');
+
 let successFunction = (position) => {
     text.innerHTML = '';
     detectBtn.innerHTML = 'Detecting Your Location...';
@@ -46,6 +50,3 @@ const options = {
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
-let text = document.querySelector('#Location_result p');
-let locationBox = document.querySelector('.Location');
-let detectBtn = document.querySelector('#find_retaurants_btn');
