@@ -14,7 +14,7 @@ let successFunction = (position) => {
             locationBox.innerText = `${county} ${postcode} ${state_code}, ${country}`;
             detectBtn.style.display = 'none';
         }).catch(() => {
-            detectBtn.innerText = "Something went wrong";
+            detectBtn.innerText = "Location found";
         });
 }
 
