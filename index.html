@@ -3,50 +3,49 @@
 
   <head>
     <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+
     <title> Menu Mate </title>
     <link rel="stylesheet" href="./assets/css/style.css">
   </head>
 
   <body>
 
-    <header class="header" id="header">
-        <div id="header_title">
-            <h1>Title Goes Here</h1>
+    <header id="header">
+        <div class="text-center mt-12" id="header_title">
+            <h1 class="border-x-4 rounded-full bg-teal-400 text-9xl font-bold">Menu Mate </h1>
+            
         </div>
 
-        <div id="location_btn">
-            <button class="btn" id="find_retaurants_btn"> Find Restaurants Near Me </button>
+        <div class="text-center" id="location_btn">
+            <button class="btn mt-10 bg-teal-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-ful" id="find_retaurants_btn"> Find Restaurants Near Me </button>
         </div>
     </header>
 
-    <div class="user_input_section" id="user_input_section">
+    <div class="text-center mt-10 user_input_section" id="user_input_section">
         <form id="dietary_restrictions_search">
 
             <div>
                 <div>
-                    <p id="selector_instructions"> Please Select Your Dietary Preference </p>
+                    <p id="selector_instructions"> Please Select Your Dietary Preference: </p>
                 </div>
-
-                <input type="checkbox" id="gluten_free"> Gluten Free </input>
-                <input type="checkbox" id="dairy_free"> Dairy Free </input>
-                <input type="checkbox" id="vegetarian"> Vegetarian </input>
-                <input type="checkbox" id="vegan"> Vegan </input>
-            
-                <button id="dietary_restrictions_btn"> Filter Menu </button>
-            </div>
-
+                    <button class="mt-4 bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" id="dietary_restrictions_btn"> Filter Menu </button> <br>
+                    <input type="checkbox" id="gluten_free"> Gluten Free </input>
+                    <input type="checkbox" id="dairy_free"> Dairy Free </input>
+                    <input type="checkbox" id="vegetarian"> Vegetarian </input>
+                    <input type="checkbox" id="vegan"> Vegan </input>
+                </div>
         </form>
     </div>
 
     <div class="restaurant_results">
-
         <div id="Location">
             <div id="Location_result">
                 <p></p>
             </div>
         </div>
-
-
     </div>
 
     <footer class="footer" id="footer">
