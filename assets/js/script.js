@@ -1,6 +1,24 @@
 let text = document.querySelector('#Location_result p');
-let locationBox = document.querySelector('.Location');
+let locationBox = document.querySelector('#Location');
 let detectBtn = document.querySelector('#find_retaurants_btn');
+
+function getRestaurants(zip){
+
+    const options = {
+        method: 'GET',
+        headers: {
+          "x-requested-with": "xmlhttprequest",
+          "Access-Control-Allow-Origin": "*",
+          accept: 'application/json',
+          Authorization: 'Bearer sW-dsNBeUuGD3tQgKOFBeUzIj5oj8T_O96mWZEngST-4EB7JqJZ_UHOmk7VGf4QXiSeJvOPF0lPaIzapvTEHpd4oykiivjD860xqNlLzt4ndWkxnwGNkEA2z-KNyZXYx'
+        }
+      };
+    
+      fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${zip}&attributes=&sort_by=best_match&limit=20`, options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+    };
 
 let successFunction = (position) => {
     text.innerHTML = '';
@@ -13,9 +31,10 @@ let successFunction = (position) => {
             let { county, postcode, country, state_code } = allDetails;
             locationBox.innerText = `${county} ${postcode} ${state_code}, ${country}`;
             detectBtn.style.display = 'none';
+            getRestaurants(postcode);
         }).catch(() => {
             detectBtn.innerText = "Something went wrong";
-        });
+        });  
 }
 
 let errorFunction = (error) => {
@@ -37,16 +56,4 @@ detectBtn.addEventListener('click', () => {
         alert('It seems like Geolocation, which is required for this page, is not enabled in your browser.');
     }
 });
-
-const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer sW-dsNBeUuGD3tQgKOFBeUzIj5oj8T_O96mWZEngST-4EB7JqJZ_UHOmk7VGf4QXiSeJvOPF0lPaIzapvTEHpd4oykiivjD860xqNlLzt4ndWkxnwGNkEA2z-KNyZXYx'
-    }
-  };
   
-  fetch( 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?sort_by=best_match&limit=20', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
