@@ -2,6 +2,24 @@ let text = document.querySelector('#Location_result p');
 let locationBox = document.querySelector('#Location');
 let detectBtn = document.querySelector('#find_retaurants_btn');
 
+function restaurantNames(response){
+
+    var restaurantList = document.getElementById('Location_result')
+
+    console.log(response);
+
+    for(i = 0; i < response.businesses.length; i++){
+
+        var restaurants = document.createElement('div');
+
+        restaurants.innerHTML = response.businesses[i].name;
+
+        restaurantList.appendChild(restaurants);
+
+
+    }
+}
+
 function getRestaurants(zip){
 
     const options = {
@@ -16,8 +34,9 @@ function getRestaurants(zip){
     
       fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${zip}&attributes=&sort_by=best_match&limit=20`, options)
         .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+        //.then(response => console.log(response))
+        .then(response => restaurantNames(response))
+       // .catch(err => console.error(err));
     };
 
 let successFunction = (position) => {
@@ -56,4 +75,5 @@ detectBtn.addEventListener('click', () => {
         alert('It seems like Geolocation, which is required for this page, is not enabled in your browser.');
     }
 });
-  
+
+
