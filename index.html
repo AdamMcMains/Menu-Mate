@@ -1,44 +1,48 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 
   <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="stylesheet" href="/assets/css/style.css">
 
     <title> Menu Mate </title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    
   </head>
 
-  <body>
-
+  <body class="bg-cover bg-no-repeat bg-center" style="background-image:url(./assets/images/food.png)">
     <header id="header">
-        <div class="text-center mt-12" id="header_title">
-            <h1 class="border-x-4 rounded-full bg-teal-400 text-9xl font-bold">Menu Mate </h1>
-            
+        <div class="mt-12" id="header_title">
+            <h1 class="text-center border-x-2 rounded-full bg-teal-400 text-8xl font-bold">Menu Mate </h1>
         </div>
-
+    </header>
+<main>
+    <div>
+        <div class="mt-12 text-white bg-slate-950 h-60 w-72 bg-opacity-25">
+            <h2 class="text-center text-3xl">NEARBY RESTAURANTS IN YOUR AREA</h2>
+            <p class="text-center text-1xl font-bold">Local Foods you will love</p>
+        </div>
         <div class="text-center" id="location_btn">
             <button class="btn mt-10 bg-teal-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-ful" id="find_retaurants_btn"> Find Restaurants Near Me </button>
         </div>
-    </header>
-
-    <div class="text-center mt-10 user_input_section" id="user_input_section">
-        <form id="dietary_restrictions_search">
-
-            <div>
-                <div>
-                    <p id="selector_instructions"> Please Select Your Dietary Preference: </p>
-                </div>
+    </div>
+    
+<div class="flex justify-center text-center mt-12 user_input_section" id="user_input_section">
+            <div class="rounded-full h-full bg-teal-400">
+                <p id="selector_instructions"> Please Select Your Dietary Preference: </p>
+                <form id="dietary_restrictions_search">
                     <button class="mt-4 bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" id="dietary_restrictions_btn"> Filter Menu </button> <br>
                     <input type="checkbox" id="gluten_free"> Gluten Free </input>
                     <input type="checkbox" id="dairy_free"> Dairy Free </input>
                     <input type="checkbox" id="vegetarian"> Vegetarian </input>
                     <input type="checkbox" id="vegan"> Vegan </input>
-                </div>
-        </form>
-    </div>
+                </form> </div>
+            </div>
+</div>
 
     <div class="restaurant_results">
         <div id="Location">
@@ -47,14 +51,21 @@
         <div id="Location_result">
             <p></p>
         </div>
+
+    </div>   
+
+
     </div>
 
-    <footer class="footer" id="footer">
 
+    <footer class="footer" id="footer">
+      
     </footer>
+
 
     <script src="./assets/js/script.js"></script> 
 
   </body>
   
   </html>
+
