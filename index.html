@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia&family=Oswald:wght@300&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <title> Menu Mate </title>
     
@@ -17,14 +21,14 @@
   <body class="bg-cover bg-no-repeat bg-center" style="background-image:url(./assets/images/food.png)">
     <header id="header">
         <div class="mt-12" id="header_title">
-            <h1 class="text-center border-x-2 rounded-full bg-teal-400 text-8xl font-bold">Menu Mate </h1>
+            <h1 class="text-center">Menu Mate </h1>
         </div>
     </header>
 <main>
     <div>
         <div class="mt-12 text-white bg-slate-950 h-60 w-72 bg-opacity-25">
-            <h2 class="text-center text-3xl">NEARBY RESTAURANTS IN YOUR AREA</h2>
-            <p class="text-center text-1xl font-bold">Local Foods you will love</p>
+            <h2 class="text-center text-3xl" id="restaurants-in-area">NEARBY RESTAURANTS IN YOUR AREA</h2>
+            <p class="text-center text-1xl font-bold" id="local-food">Local Foods you will love</p>
         </div>
         <div class="text-center" id="location_btn">
             <button class="btn mt-10 bg-teal-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-ful" id="find_retaurants_btn"> Find Restaurants Near Me </button>
@@ -44,14 +48,17 @@
             </div>
 </div>
 
+<div class="container">
+    <h3>Search Results</h3>
     <div class="restaurant_results">
         <div id="Location">
             <div id="Location_result">
                 <p></p>
             </div>
         </div>
-
-    </div>   
+    </div>  
+</div>
+    
 
 
     </div>
