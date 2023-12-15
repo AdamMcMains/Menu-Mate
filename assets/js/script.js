@@ -117,5 +117,5 @@ detectBtn.addEventListener('click', () => {
     } else {
         alert('It seems like Geolocation, which is required for this page, is not enabled in your browser.');
     }
-
 });
+
