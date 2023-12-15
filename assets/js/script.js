@@ -24,6 +24,7 @@ function getRestaurants(zip){
 
     var category;
 
+
     if(document.getElementById("vegetarian").checked){
         category = category + "&categories=vegetarian";
         console.log("vegetarian was checked");
@@ -115,7 +116,6 @@ detectBtn.addEventListener('click', () => {
     }
 
 });
-
 
 
 
