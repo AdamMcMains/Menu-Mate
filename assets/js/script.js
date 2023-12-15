@@ -5,8 +5,8 @@ let detectBtn = document.querySelector('#find_retaurants_btn');
 function restaurantNames(response){
 
 
-    var restaurantList = document.getElementById('Location_result')
-=======
+    
+
     var restaurantList = document.getElementById('Location_result');
 
 

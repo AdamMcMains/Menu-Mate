@@ -29,28 +29,28 @@ body, html {
   border-radius: 50px;
   margin: 30px auto 0 auto;
   font-family: 'Kalnia', serif;
-  
-    height: 100%;
+  height: 100%;
   }
 
-
-
 .container {
-
-  display: block;
   width: 500px;
   height: 500px;
-  margin: 40px auto;
+  margin: 50px auto;
   border-radius: 50px;
   background-color: rgb(117, 197, 197);
-  color: white;
+  color: black;
   overflow: auto;
   text-align: center;
   font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  line-height: 80px;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
 }
 
 .container h3 {
-
   font-size: larger;
-  font-style: 
+  text-decoration: underline;
 }
