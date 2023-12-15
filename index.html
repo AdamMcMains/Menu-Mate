@@ -10,33 +10,32 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
   </head>
 
-  <body class="bg-cover bg-no-repeat bg-center" style="background-image:url(./assets/images/food.png)">
+  <body class="bg-cover bg-no-repeat bg-center object-fill h-full w-full" style="background-image:url(./assets/images/food.png)">
     <header id="header">
         <div class="mt-12" id="header_title">
-            <h1 class="text-center border-x-2 rounded-full bg-teal-400 text-8xl font-bold">Menu Mate </h1>
+            <h1 class="text-center rounded-full bg-teal-400 text-8xl font-bold">Menu Mate </h1>
         </div>
     </header>
 <main>
-    <div>
-        <div class="mt-12 text-white bg-slate-950 h-60 w-72 bg-opacity-25">
-            <h2 class="text-center text-3xl">NEARBY RESTAURANTS IN YOUR AREA</h2>
-            <p class="text-center text-1xl font-bold">Local Foods you will love</p>
-        </div>
-        <div class="text-center" id="location_btn">
-            <button class="btn mt-10 bg-teal-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-ful" id="find_retaurants_btn"> Find Restaurants Near Me </button>
+    <div class="flex justify-center">
+        <div class="mt-12 text-white bg-slate-950 h-48 w-72 bg-opacity-75">
+            <h2 class="mt-4 text-center font-bold text-4xl">NEARBY RESTAURANTS IN YOUR AREA</h2>
+            <p class="text-center text-1xl font-bold mt-2">Local Foods you will love</p>
         </div>
     </div>
     
-<div class="flex justify-center text-center mt-12 user_input_section" id="user_input_section">
-            <div class="rounded-full h-full bg-teal-400">
-                <p id="selector_instructions"> Please Select Your Dietary Preference: </p>
+<div class="user_input_section flex justify-center text-center mt-12" id="user_input_section">
+            <div>
+                <p class="font-bold" id="selector_instructions"> Please Select Your Dietary Preference: </p>
                 <form id="dietary_restrictions_search">
-                    <button class="mt-4 bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" id="dietary_restrictions_btn"> Filter Menu </button> <br>
                     <input type="checkbox" id="gluten_free"> Gluten Free </input>
                     <input type="checkbox" id="dairy_free"> Dairy Free </input>
                     <input type="checkbox" id="vegetarian"> Vegetarian </input>
                     <input type="checkbox" id="vegan"> Vegan </input>
-                </form> </div>
+                </form>
+                <div class="text-center" id="location_btn">
+                    <button class="btn mt-4 bg-gray-500 hover:bg-rose-700 text-white font-bold py-2 px-4 rounded-ful" id="find_retaurants_btn"> Find Restaurants Near Me </button>
+                </div>
             </div>
 </div>
 
@@ -52,5 +51,7 @@
     <footer class="footer" id="footer">
     </footer>
     <script src="./assets/js/script.js"></script>
+    
 </body>
+
 </html>
