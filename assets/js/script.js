@@ -7,7 +7,6 @@ function restaurantNames(response){
 
     var restaurantList = document.getElementById('Location_result');
 
-
     console.log(response);
 
     for(i = 0; i < response.businesses.length; i++){
@@ -23,7 +22,6 @@ function restaurantNames(response){
 function getRestaurants(zip){
 
     var category;
-
 
     if(document.getElementById("vegetarian").checked){
         category = category + "&categories=vegetarian";
@@ -114,7 +112,6 @@ detectBtn.addEventListener('click', () => {
     } else {
         alert('It seems like Geolocation, which is required for this page, is not enabled in your browser.');
     }
-
 });
 
 
