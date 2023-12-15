@@ -15,7 +15,6 @@ function restaurantNames(response){
         restaurants.innerHTML = response.businesses[i].name;
 
         restaurantList.appendChild(restaurants);
-
     }
 }
 
@@ -23,7 +22,6 @@ function getRestaurants(zip){
 
     var category;
 
-    
     if(document.getElementById("vegetarian").checked){
         category = category + "&categories=vegetarian";
         console.log("vegetarian was checked");
@@ -61,6 +59,7 @@ function getRestaurants(zip){
     }
     //check fourth checkbox
 
+
     const options = {
         method: 'GET',
         headers: {
@@ -70,15 +69,11 @@ function getRestaurants(zip){
           Authorization: 'Bearer sW-dsNBeUuGD3tQgKOFBeUzIj5oj8T_O96mWZEngST-4EB7JqJZ_UHOmk7VGf4QXiSeJvOPF0lPaIzapvTEHpd4oykiivjD860xqNlLzt4ndWkxnwGNkEA2z-KNyZXYx'
         }
       };
-
-
       fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${zip}${category}&sort_by=best_match&limit=50`, options)
         .then(response => response.json())
         //.then(response => console.log(response))
         .then(response => restaurantNames(response))
        // .catch(err => console.error(err));
-
-       
     };
 
 let successFunction = (position) => {
@@ -117,5 +112,4 @@ detectBtn.addEventListener('click', () => {
         alert('It seems like Geolocation, which is required for this page, is not enabled in your browser.');
     }
 });
-
 
