@@ -23,26 +23,43 @@ function getRestaurants(zip){
 
     var category;
 
+    
     if(document.getElementById("vegetarian").checked){
-        category = "vegetarian";
+        category = category + "&categories=vegetarian";
         console.log("vegetarian was checked");
     }
-    else if(document.getElementById("vegan").checked){
-        category = "vegan";
+    else {
+        console.log("nothing was checked");
+      }
+    //check first checkbox 
+
+    if(document.getElementById("vegan").checked){
+        category = category + "&categories=vegan";
         console.log("vegan was checked");
     }
-    else if (document.getElementById("gluten_free").checked){
-        category = "gluten_free";
+    else {
+        console.log("nothing was checked");
+      }
+    // check second checkbox
+
+
+    if(document.getElementById("gluten_free").checked){
+        category = category + "&categories=gluten_free";
         console.log("gluten free was checked");
     }
-    else if (document.getElementById("kosher").checked){
-        category = "kosher";
+    else {
+        console.log("nothing was checked");
+      }
+    //check third checkbox
+    
+    if (document.getElementById("kosher").checked){
+        category = category + "&categories=kosher";
         console.log("kosher was checked");
     }
-    else{
-      category = "";
+    else {
       console.log("nothing was checked");
     }
+    //check fourth checkbox
 
     const options = {
         method: 'GET',
@@ -55,7 +72,7 @@ function getRestaurants(zip){
       };
 
 
-      fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${zip}&categories=${category}&sort_by=best_match&limit=50`, options)
+      fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${zip}${category}&sort_by=best_match&limit=50`, options)
         .then(response => response.json())
         //.then(response => console.log(response))
         .then(response => restaurantNames(response))
