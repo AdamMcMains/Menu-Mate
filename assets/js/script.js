@@ -4,11 +4,7 @@ let detectBtn = document.querySelector('#find_retaurants_btn');
 
 function restaurantNames(response){
 
-
-    var restaurantList = document.getElementById('Location_result')
-=======
     var restaurantList = document.getElementById('Location_result');
-
 
     console.log(response);
 
@@ -19,40 +15,49 @@ function restaurantNames(response){
         restaurants.innerHTML = response.businesses[i].name;
 
         restaurantList.appendChild(restaurants);
-
-
-
-
-
     }
 }
 
 function getRestaurants(zip){
 
-
-
     var category;
 
     if(document.getElementById("vegetarian").checked){
-        category = "vegetarian";
+        category = category + "&categories=vegetarian";
         console.log("vegetarian was checked");
     }
-    else if(document.getElementById("vegan").checked){
-        category = "vegan";
+    else {
+        console.log("nothing was checked");
+      }
+    //check first checkbox 
+
+    if(document.getElementById("vegan").checked){
+        category = category + "&categories=vegan";
         console.log("vegan was checked");
     }
-    else if (document.getElementById("gluten_free").checked){
-        category = "gluten_free";
+    else {
+        console.log("nothing was checked");
+      }
+    // check second checkbox
+
+
+    if(document.getElementById("gluten_free").checked){
+        category = category + "&categories=gluten_free";
         console.log("gluten free was checked");
     }
-    else if (document.getElementById("kosher").checked){
-        category = "kosher";
+    else {
+        console.log("nothing was checked");
+      }
+    //check third checkbox
+    
+    if (document.getElementById("kosher").checked){
+        category = category + "&categories=kosher";
         console.log("kosher was checked");
     }
-    else{
-      category = "";
+    else {
       console.log("nothing was checked");
     }
+    //check fourth checkbox
 
 
     const options = {
@@ -64,22 +69,11 @@ function getRestaurants(zip){
           Authorization: 'Bearer sW-dsNBeUuGD3tQgKOFBeUzIj5oj8T_O96mWZEngST-4EB7JqJZ_UHOmk7VGf4QXiSeJvOPF0lPaIzapvTEHpd4oykiivjD860xqNlLzt4ndWkxnwGNkEA2z-KNyZXYx'
         }
       };
-
-    
-      fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${zip}&attributes=&sort_by=best_match&limit=20`, options)
-
-
-
-      fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${zip}&categories=${category}&sort_by=best_match&limit=50`, options)
-
+      fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${zip}${category}&sort_by=best_match&limit=50`, options)
         .then(response => response.json())
         //.then(response => console.log(response))
         .then(response => restaurantNames(response))
        // .catch(err => console.error(err));
-
-
-       
-
     };
 
 let successFunction = (position) => {
@@ -117,5 +111,5 @@ detectBtn.addEventListener('click', () => {
     } else {
         alert('It seems like Geolocation, which is required for this page, is not enabled in your browser.');
     }
-
 });
+
