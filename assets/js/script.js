@@ -3,7 +3,16 @@ let locationBox = document.querySelector('#Location');
 let detectBtn = document.querySelector('#find_retaurants_btn');
 let zipcode;
 
+
+function clearList(id){
+
+    document.getElementById(id).innerHTML = "";
+
+}
+
 function restaurantNames(response){
+
+    clearList('Location_result');
 
     var restaurantList = document.getElementById('Location_result');
 
@@ -79,7 +88,6 @@ function getRestaurants(zip){
 
 let successFunction = (position) => {
     text.innerHTML = '';
-    detectBtn.innerHTML = 'Detecting Your Location...';
     let { latitude, longitude } = position.coords;
     fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=32a3d8e9c3b64898a02f43e9b2f09e34`)
         .then(response => response.json()).then(response => {
