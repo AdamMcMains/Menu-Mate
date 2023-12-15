@@ -1,6 +1,7 @@
 let text = document.querySelector('#Location_result p');
 let locationBox = document.querySelector('#Location');
 let detectBtn = document.querySelector('#find_retaurants_btn');
+let zipcode;
 
 function restaurantNames(response){
 
@@ -59,7 +60,6 @@ function getRestaurants(zip){
     }
     //check fourth checkbox
 
-
     const options = {
         method: 'GET',
         headers: {
@@ -69,6 +69,7 @@ function getRestaurants(zip){
           Authorization: 'Bearer sW-dsNBeUuGD3tQgKOFBeUzIj5oj8T_O96mWZEngST-4EB7JqJZ_UHOmk7VGf4QXiSeJvOPF0lPaIzapvTEHpd4oykiivjD860xqNlLzt4ndWkxnwGNkEA2z-KNyZXYx'
         }
       };
+      
       fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${zip}${category}&sort_by=best_match&limit=50`, options)
         .then(response => response.json())
         //.then(response => console.log(response))
@@ -86,8 +87,8 @@ let successFunction = (position) => {
             console.table(allDetails);
             let { county, postcode, country, state_code } = allDetails;
             locationBox.innerText = `${county} ${postcode} ${state_code}, ${country}`;
-            detectBtn.style.display = 'none';
             getRestaurants(postcode);
+            zipcode = postcode;
         }).catch(() => {
             detectBtn.innerText = "Something went wrong";
         });  
@@ -112,4 +113,6 @@ detectBtn.addEventListener('click', () => {
         alert('It seems like Geolocation, which is required for this page, is not enabled in your browser.');
     }
 });
+
+
 
