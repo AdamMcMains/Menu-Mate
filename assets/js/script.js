@@ -94,7 +94,6 @@ let successFunction = (position) => {
             let allDetails = response.results[0].components;
             console.table(allDetails);
             let { county, postcode, country, state_code } = allDetails;
-            locationBox.innerText = `${county} ${postcode} ${state_code}, ${country}`;
             getRestaurants(postcode);
             zipcode = postcode;
         }).catch(() => {
