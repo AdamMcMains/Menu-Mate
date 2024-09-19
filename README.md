@@ -1,4 +1,9 @@
 # Menu Mate
+
+<p align="center">
+    <img src="https://img.shields.io/badge/-Javascript-pink" >
+</p>
+
 ## Description
  Web application that will fetch local restaurants and filter out certain dietary restrictions on the menu based off of user input.
 
