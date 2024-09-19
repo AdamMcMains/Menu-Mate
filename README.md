@@ -11,7 +11,7 @@ None required
 ## Credits
 Adam McMains,
 Larrisa Nash,
-Chris Hanson
+Chris Sanchez
 James 
 ## License
 MIT License
