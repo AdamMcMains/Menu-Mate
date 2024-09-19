@@ -7,7 +7,7 @@
 ## Installation
 None required 
 ## Usage
-Deployed Application: href: https://github.com/AdamMcMains/Menu-Mate
+Deployed Application: https://github.com/AdamMcMains/Menu-Mate
 ## Credits
 Adam McMains,  
 Larrisa Nash,  
