@@ -9,10 +9,10 @@ None required
 ## Usage
 
 ## Credits
-Adam McMains,
-Larrisa Nash,
-Chris Sanchez
-James 
+Adam McMains,  
+Larrisa Nash,  
+Chris Sanchez  
+James   
 ## License
 MIT License
 ## Features 
